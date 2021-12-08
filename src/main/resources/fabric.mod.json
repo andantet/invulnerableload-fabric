@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+
+  "id": "invulnerableload",
+  "version": "${version}",
+  "license": "MIT",
+
+  "name": "Invulnerable Load",
+  "icon": "assets/invulnerableload/icon.png",
+  "description": "Makes the player invulnerable during loading.",
+
+  "authors": [
+    "andante."
+  ],
+
+  "contact": {
+    "sources": "https://github.com/andantet/invulnerableload",
+    "issues": "https://github.com/andantet/invulnerableload/issues"
+  },
+
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "me.andante.invulnerableload.InvulnerableLoad"
+    ]
+  },
+  "mixins": [
+    "invulnerableload.mixins.json"
+  ],
+  "accessWidener": "invulnerableload.accesswidener",
+
+  "depends": {
+    "fabricloader": ">=0.12.6",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  }
+}
