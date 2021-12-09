@@ -14,7 +14,8 @@ public class ServerPlayNetworkHandlerMixin implements ServerPlayNetworkHandlerAc
 
     @Inject(method = "onResourcePackStatus", at = @At("TAIL"))
     private void onOnResourcePackStatus(ResourcePackStatusC2SPacket packet, CallbackInfo ci) {
-        if (packet.getStatus() == ResourcePackStatusC2SPacket.Status.SUCCESSFULLY_LOADED) {
+        ResourcePackStatusC2SPacket.Status status = packet.getStatus();
+        if (status != ResourcePackStatusC2SPacket.Status.ACCEPTED) {
             this.invulnerableLoad = false;
         }
     }
