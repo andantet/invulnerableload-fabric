@@ -3,36 +3,32 @@
 
   "id": "invulnerableload",
   "version": "${version}",
-  "license": "MIT",
+  "license": [
+    "MIT (Code)",
+    "All Rights Reserved (Assets)"
+  ],
 
   "name": "Invulnerable Load",
   "icon": "assets/invulnerableload/icon.png",
-  "description": "Makes the player invulnerable during loading.",
+  "description": "Makes the player invulnerable during resource pack loading upon joining a server",
 
   "authors": [
-    "andante."
+    "Daniel Orr (Andante)"
   ],
-
   "contact": {
-    "sources": "https://github.com/andantet/invulnerableload",
-    "issues": "https://github.com/andantet/invulnerableload/issues"
+    "sources": "https://github.com/andantet/invulnerableload-fabric",
+    "issues": "https://github.com/andantet/invulnerableload-fabric/issues"
   },
 
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
-    "main": [
-      "me.andante.invulnerableload.InvulnerableLoad"
-    ]
+    "server": [ "me.andante.invulnerableload.impl.server.InvulnerableLoadServerImpl" ]
   },
-  "mixins": [
-    "invulnerableload.mixins.json"
-  ],
-  "accessWidener": "invulnerableload.accesswidener",
+  "mixins": [ "invulnerableload.mixins.json" ],
 
   "depends": {
-    "fabricloader": ">=0.12.6",
-    "fabric": "*",
-    "minecraft": "1.18.x",
-    "java": ">=17"
+    "java": ">=17",
+    "minecraft": ">=1.19",
+    "fabricloader": ">=0.14"
   }
 }
